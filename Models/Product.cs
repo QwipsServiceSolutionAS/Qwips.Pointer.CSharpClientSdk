@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Qwips.Core.Pointer.Models {
-    public class InlineResponse20020Products : IParsable {
+    public class Product : IParsable {
         /// <summary>Gets or Sets AvailableQuantity</summary>
         public double? AvailableQuantity { get; set; }
         /// <summary>Gets or Sets CreatedAt</summary>
@@ -110,9 +110,9 @@ namespace Qwips.Core.Pointer.Models {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InlineResponse20020Products CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Product CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InlineResponse20020Products();
+            return new Product();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,24 +148,24 @@ namespace Qwips.Core.Pointer.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("availableQuantity", AvailableQuantity);
-            writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
+            //writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("gtin", Gtin);
-            writer.WriteObjectValue<InlineResponse2004Hashes>("_hashes", Hashes);
-            writer.WriteStringValue("id", Id);
+            //writer.WriteObjectValue<InlineResponse2004Hashes>("_hashes", Hashes);
+            //writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isBlocked", IsBlocked);
             writer.WriteBoolValue("isSoftBlocked", IsSoftBlocked);
             writer.WriteBoolValue("isStockItem", IsStockItem);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("no", No);
+            //writer.WriteStringValue("no", No);
             writer.WriteDoubleValue("purchasePrice", PurchasePrice);
-            writer.WriteCollectionOfObjectValues<InlineResponse2002Rowrels>("rowrels", Rowrels);
-            writer.WriteDoubleValue("_score", Score);
+            //writer.WriteCollectionOfObjectValues<InlineResponse2002Rowrels>("rowrels", Rowrels);
+            //writer.WriteDoubleValue("_score", Score);
             writer.WriteDoubleValue("sellingPrice", SellingPrice);
             writer.WriteStringValue("sellingUnit", SellingUnit);
             writer.WriteStringValue("sku", Sku);
-            writer.WriteStringValue("tenantId", TenantId);
-            writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            //writer.WriteStringValue("tenantId", TenantId);
+            //writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("vatGroupId", VatGroupId);
         }
     }

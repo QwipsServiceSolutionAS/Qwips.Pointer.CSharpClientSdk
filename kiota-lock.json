@@ -1,6 +1,6 @@
 {
   "descriptionHash": "4264B4953C62BF834A655D150DA920D6192CB462121401C9DF32D7ED5B9C6E74D2329D16632FEF508607B2F33D91A9952054A981B6E72CFC5C92F34740A8F5A0",
-  "descriptionLocation": "C:\\Repos\\PointerClientSDK\\garnes-pointer-swagger-fromserver.json",
+  "descriptionLocation": "C:\\Repos\\PointerClientSdk\\garnes-pointer-swagger-fromserver.json",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.6.0-preview.202308310001",
   "clientClassName": "Pointer",

@@ -72,25 +72,4 @@ namespace Qwips.Core.Pointer.Models {
         }
 
     }
-    public class Pointer4XXErrorResponse : Exception, IParsable
-    {
-        public string Content { get;  set; }
-
-        public static Pointer4XXErrorResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-        {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Pointer4XXErrorResponse();
-        }
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-        {
-            return new Dictionary<string, Action<IParseNode>> {
-                {"Content", n => { Content = n.GetStringValue(); } },
-            };
-        }
-
-        public void Serialize(ISerializationWriter writer)
-        {
-            throw new NotImplementedException();
-        }
-    }
 }

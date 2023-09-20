@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Qwips.Core.Pointer.Models {
-    public class InlineResponse2005 : IParsable {
+    public class ProductUpdateResponse : IParsable {
         /// <summary>Gets or Sets CreatedAt</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Gets or Sets Id</summary>
@@ -38,9 +38,9 @@ namespace Qwips.Core.Pointer.Models {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InlineResponse2005 CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ProductUpdateResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InlineResponse2005();
+            return new ProductUpdateResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

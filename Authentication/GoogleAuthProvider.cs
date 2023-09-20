@@ -2,7 +2,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Authentication;
 
-namespace PointerClientSDK.Authentication
+namespace PointerClientSdk.Authentication
 {
 
     public class GoogleAuthorizationProvider : IAuthenticationProvider

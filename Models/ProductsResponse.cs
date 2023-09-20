@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Qwips.Core.Pointer.Models {
-    public class InlineResponse20020 : IParsable {
+    public class ProductsResponse : IParsable {
         /// <summary>The aggs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +25,7 @@ namespace Qwips.Core.Pointer.Models {
         /// <summary>Gets or Sets Products</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InlineResponse20020Products>? Products { get; set; }
+        public List<Product>? Products { get; set; }
 #nullable restore
 #else
         public List<InlineResponse20020Products> Products { get; set; }
@@ -36,9 +36,9 @@ namespace Qwips.Core.Pointer.Models {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InlineResponse20020 CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ProductsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InlineResponse20020();
+            return new ProductsResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +47,7 @@ namespace Qwips.Core.Pointer.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"aggs", n => { Aggs = n.GetObjectValue<InlineResponse2002Aggs>(InlineResponse2002Aggs.CreateFromDiscriminatorValue); } },
                 {"nextPageToken", n => { NextPageToken = n.GetStringValue(); } },
-                {"products", n => { Products = n.GetCollectionOfObjectValues<InlineResponse20020Products>(InlineResponse20020Products.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"products", n => { Products = n.GetCollectionOfObjectValues<Product>(Product.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"totalSize", n => { TotalSize = n.GetDoubleValue(); } },
             };
         }
@@ -59,7 +59,7 @@ namespace Qwips.Core.Pointer.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<InlineResponse2002Aggs>("aggs", Aggs);
             writer.WriteStringValue("nextPageToken", NextPageToken);
-            writer.WriteCollectionOfObjectValues<InlineResponse20020Products>("products", Products);
+            writer.WriteCollectionOfObjectValues<Product>("products", Products);
             writer.WriteDoubleValue("totalSize", TotalSize);
         }
     }
